@@ -39,6 +39,33 @@ $.tablesorter.addParser({
 });
 
 $.tablesorter.addParser({
+    id: 'dates2',
+    is: function (s) {
+        // return false so this parser is not auto detected
+        return false;
+    },
+    format: function (s) {
+//      alert("dates2 parser : "+s);
+        var date = s.match(/\b(\d{4})[\-\/]([01]?\d)[\-\/]([0123]?\d)\s+([012]?\d)?:?(\d{2})?:?(\d{2})?/);
+        if (!date)
+            return new Date().getTime();
+        var y = date[1];
+        var m = parseInt(date[2])-1;
+        var d = date[3];
+        var hr = date[4];
+        var mn = date[5];
+        var sc = 0;
+        if (date[6])
+            sc = date[6];
+//        alert("y "+y+", m "+m+", d "+d+" hr:mn "+hr+":"+mn+"4,5,6,7,8,9,10,11,12 "+date[4]+","+date[5]+","+date[6]+","+date[7]+","+date[8]+","+date[9]+","+date[10]+","+date[11]+","+date[12]);
+        newd = new Date(y,m,d,hr,mn,sc);
+//      alert(newd);
+        return newd.getTime();
+    },
+    type: 'numeric'
+});
+
+$.tablesorter.addParser({
     id: 'groksizes',
     is: function (s) {
         // return false so this parser is not auto detected

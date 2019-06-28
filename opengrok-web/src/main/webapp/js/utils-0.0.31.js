@@ -1486,6 +1486,23 @@ function init_tablesorter() {
             }
         }
     });
+    $("#repolist").tablesorter({
+        sortList: [[0, 0]],
+        cancelSelection: true,
+        sortInitialOrder: "desc",
+        headers: {
+            0: {
+                sorter: 'text',
+                sortInitialOrder: "asc"
+            },
+            1: {
+                sorter: 'text'
+            },
+            2: {
+                sorter: 'dates2'
+            }
+        }
+    });
 }
 
 function init_markdown_converter() {

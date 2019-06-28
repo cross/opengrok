@@ -129,7 +129,7 @@ Portions Copyright (c) 2019, Krystof Tulinger <k.tulinger@seznam.cz>.
                 <%
                 if (pHelper.getAllGrouped(group).size() > 0) {
                 %>
-                    <table>
+                    <table id="repolist">
                         <opengrok:repositories
                                 pageConfig="${pageConfig}"
                                 repositories="<%= pHelper.getRepositories(group) %>"
@@ -185,7 +185,7 @@ Portions Copyright (c) 2019, Krystof Tulinger <k.tulinger@seznam.cz>.
                          <% if (pHelper.hasUngroupedFavourite()
                                 || (projects.size() > 0 && projects.size() <= cfg.getGroupsCollapseThreshold())) {
                         %>data-accordion-visible="true"<% } %>>
-                        <table>
+                        <table id="repolist">
                             <opengrok:repositories
                                     pageConfig="${pageConfig}"
                                     repositories="<%= pHelper.getUngroupedRepositories() %>"

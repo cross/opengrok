@@ -29,9 +29,9 @@ Portions Copyright (c) 2019, Krystof Tulinger <k.tulinger@seznam.cz>.
 <c:if test="${repositories.size() > 0}">
     <thead>
     <tr>
-        <td><b>Repository</b></td>
-        <td><b>SCM Type: Parent (branch)</b></td>
-        <td><b>Current version</b></td>
+        <th>Repository</th>
+        <th>SCM Type: Parent (branch)</th>
+        <th class="sort-dates2">Current version</th>
     </tr>
     </thead>
     <tbody>
